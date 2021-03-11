@@ -13,11 +13,13 @@ WHITE = (255,255,255)
 background = pygame.image.load('Assets/background.png').convert_alpha()
 player = pygame.image.load('Assets/dino_main.png').convert_alpha()
 bird = pygame.image.load('Assets/berd.png').convert_alpha()
+cactus = pygame.image.load('Assets/cactusBig0000.png').convert_alpha()
 background_positionX = 0
 background_positionY = 0
 playerPosY = 430
 birdPosX = 500
 birdPosY = 30
+cactus_PosX = 500
 ################################################
 
 def background_movement(backPosX,backPosY):
@@ -31,6 +33,10 @@ def dino_player(playerPosX,playerPosY):
 
 def bird_movement(birdPosX,birdPosY):
     SCREEN.blit(bird,(birdPosX,birdPosY))
+
+
+def cactus_movement(cactusPosx,cactusPosY):
+    SCREEN.blit(cactus,(cactus_PosX,cactusPosY))
     
 if __name__ == "__main__":
 
@@ -65,6 +71,13 @@ if __name__ == "__main__":
         bird_movement(birdPosX,birdPosY)
         if birdPosX <=-5:
             birdPosX = 500
+        #####################################
+        #######Cactus Movement###############
+        cactus_PosX -= 5
+        cactus_movement(cactus_PosX,430)
+
+        if cactus_PosX <= -5:
+            cactus_PosX = 500
         #####################################
         clock.tick(FPS)
         pygame.display.update()
