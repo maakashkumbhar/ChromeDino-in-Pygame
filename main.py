@@ -23,7 +23,7 @@ playerPosY = 430
 playerPosX = 30
 birdPosX = 500
 birdPosY = 30
-cactus_PosX = 500
+cactus_PosX = 800
 ################################################
 
 def background_movement(backPosX,backPosY):
@@ -82,8 +82,8 @@ if __name__ == "__main__":
         cactus_PosX -= 5
         cactus_movement(cactus_PosX,430)
 
-        if cactus_PosX <= -5:
-            cactus_PosX = 500
+        if cactus_PosX <= -10:
+            cactus_PosX = 800
         #####################################
         clock.tick(FPS)
         pygame.display.update()
